@@ -40,3 +40,15 @@ class Order:
         if not isinstance(coffee, Coffee):
             raise Exception("coffee must be a Coffee instance")
         self._coffee = coffee
+
+    @property
+    def price(self):
+        return self._price
+
+    @price.setter
+    def price(self, price):
+        if not isinstance(price, (int, float)):
+            raise Exception("price must be a number")
+        if price <= 0:
+            raise Exception("price must be greater than 0")
+        self._price = price
