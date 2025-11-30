@@ -34,3 +34,10 @@ class Coffee:
     def average_price(self):
         prices = [o.price for o in self.orders()]
         return sum(prices) / len(prices) if prices else 0
+
+    def orders(self):
+        from order import Order
+        return [order for order in Order._all if order.coffee == self]
+
+    def customers(self):
+        return list(set(order.customer for order in self.orders()))
