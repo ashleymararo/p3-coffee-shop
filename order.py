@@ -25,10 +25,18 @@ class Order:
     def customer(self):
         return self._customer
 
+    @customer.setter
+    def customer(self, customer):
+        if not isinstance(customer, Customer):
+            raise Exception("customer must be a Customer instance")
+        self._customer = customer
+
     @property
     def coffee(self):
         return self._coffee
 
-    @property
-    def price(self):
-        return self._price
+    @coffee.setter
+    def coffee(self, coffee):
+        if not isinstance(coffee, Coffee):
+            raise Exception("coffee must be a Coffee instance")
+        self._coffee = coffee
