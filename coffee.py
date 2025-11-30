@@ -20,7 +20,7 @@ class Coffee:
             raise Exception("Coffee name must be at least 3 characters long.")
         self._name = value
 
-    # rship methods
+    # relationship methods
     def orders(self):
         return [o for o in Order.all if o.coffee == self]
 
