@@ -25,3 +25,16 @@ from order import Order
     def create_order(self, coffee, price):
         return Order(self, coffee, price)
 
+    @classmethod
+    def most_aficionado(cls, coffee):
+
+        max_customer = None
+        max_spent = 0
+
+        for customer in cls.all:
+            total = sum(order.price for order in customer.orders() if order.coffee == coffee)
+            if total > max_spent:
+                max_spent = total
+                max_customer = customer
+
+        return max_customer
