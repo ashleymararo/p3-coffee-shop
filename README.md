@@ -42,7 +42,7 @@ p3-coffee-shop/
 │   ├── order.py
 │   ├── debug.py
 │   └── tests/
-│       └── test_basic.py  
+│       └── test_basic.py
 │
 ├── Pipfile
 ├── Pipfile.lock
